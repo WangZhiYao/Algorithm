@@ -20,15 +20,17 @@ public class InsertionSort implements IAlgorithm {
 
     @Override
     public void run() {
-        if (arr != null && arr.length > 1) {
-            for (int i = 1; i < arr.length; i++) {
-                int temp = arr[i];
-                int j;
-                for (j = i; j > 0 && arr[j - 1] > temp; j--) {
-                    arr[j] = arr[j - 1];
-                }
-                arr[j] = temp;
+        if (arr == null || arr.length <= 1) {
+            return;
+        }
+
+        for (int i = 1; i < arr.length; i++) {
+            int temp = arr[i];
+            int j;
+            for (j = i; j > 0 && arr[j - 1] > temp; j--) {
+                arr[j] = arr[j - 1];
             }
+            arr[j] = temp;
         }
     }
 }
